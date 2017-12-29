@@ -64,6 +64,10 @@ class ComposerStaticInit98c7317e3be94a5c35732696d821441a
             'codemix\\excelexport\\' => 20,
             'cebe\\markdown\\' => 14,
         ),
+        'b' => 
+        array (
+            'bsadnu\\googlecharts\\' => 20,
+        ),
         'W' => 
         array (
             'Webmozart\\Assert\\' => 17,
@@ -239,6 +243,10 @@ class ComposerStaticInit98c7317e3be94a5c35732696d821441a
         'cebe\\markdown\\' => 
         array (
             0 => __DIR__ . '/..' . '/cebe/markdown',
+        ),
+        'bsadnu\\googlecharts\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/bsadnu/yii2-googlecharts',
         ),
         'Webmozart\\Assert\\' => 
         array (

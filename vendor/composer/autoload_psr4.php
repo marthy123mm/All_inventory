@@ -39,6 +39,7 @@ return array(
     'kartik\\affix\\' => array($vendorDir . '/kartik-v/yii2-widget-affix'),
     'codemix\\excelexport\\' => array($vendorDir . '/codemix/yii2-excelexport/src'),
     'cebe\\markdown\\' => array($vendorDir . '/cebe/markdown'),
+    'bsadnu\\googlecharts\\' => array($vendorDir . '/bsadnu/yii2-googlecharts'),
     'Webmozart\\Assert\\' => array($vendorDir . '/webmozart/assert/src'),
     'Symfony\\Polyfill\\Mbstring\\' => array($vendorDir . '/symfony/polyfill-mbstring'),
     'Symfony\\Component\\Yaml\\' => array($vendorDir . '/symfony/yaml'),

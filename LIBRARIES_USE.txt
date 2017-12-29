@@ -7,3 +7,8 @@ yii2-widgets---------------------------------------------------------
 
 Source:https://github.com/kartik-v/yii2-widgets
 Description: Display pretty widgets
+
+yii2-googlecharts---------------------------------------------------
+
+Source:https://github.com/bsadnu/yii2-googlecharts
+Desciption: Display Google Charts

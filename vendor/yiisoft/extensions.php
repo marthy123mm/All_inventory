@@ -237,4 +237,13 @@ return array (
       '@codemix/excelexport' => $vendorDir . '/codemix/yii2-excelexport/src',
     ),
   ),
+  'bsadnu/yii2-googlecharts' => 
+  array (
+    'name' => 'bsadnu/yii2-googlecharts',
+    'version' => '1.2.0.0',
+    'alias' => 
+    array (
+      '@bsadnu/googlecharts' => $vendorDir . '/bsadnu/yii2-googlecharts',
+    ),
+  ),
 );

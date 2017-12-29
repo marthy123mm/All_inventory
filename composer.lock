@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "31141c9336492b6dab18613b0ff171fc",
+    "content-hash": "801d1b165de3083d9c26acaa6828a1f4",
     "packages": [
         {
             "name": "bower-asset/bootstrap",
@@ -106,6 +106,50 @@
             "license": [
                 "MIT"
             ]
+        },
+        {
+            "name": "bsadnu/yii2-googlecharts",
+            "version": "v1.2.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/bsadnu/yii2-googlecharts.git",
+                "reference": "05e7a5c3cf6e6e7e7c337f3775b9ec87ed287efe"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/bsadnu/yii2-googlecharts/zipball/05e7a5c3cf6e6e7e7c337f3775b9ec87ed287efe",
+                "reference": "05e7a5c3cf6e6e7e7c337f3775b9ec87ed287efe",
+                "shasum": ""
+            },
+            "require": {
+                "yiisoft/yii2": "*"
+            },
+            "type": "yii2-extension",
+            "autoload": {
+                "psr-4": {
+                    "bsadnu\\googlecharts\\": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-2-Clause"
+            ],
+            "authors": [
+                {
+                    "name": "Stanislav Bannikov",
+                    "email": "bsadnu@gmail.com"
+                }
+            ],
+            "description": "Google Charts Extension for Yii 2 framework",
+            "keywords": [
+                "chart",
+                "charts",
+                "extension",
+                "google",
+                "googlecharts",
+                "yii2"
+            ],
+            "time": "2017-05-30T08:25:18+00:00"
         },
         {
             "name": "cebe/markdown",
