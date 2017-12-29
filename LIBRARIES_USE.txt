@@ -12,3 +12,9 @@ yii2-googlecharts---------------------------------------------------
 
 Source:https://github.com/bsadnu/yii2-googlecharts
 Desciption: Display Google Charts
+
+
+yii2-admin----------------------------------------------------------
+
+Source:https://github.com/mdmsoft/yii2-admin
+Description: RBAC module

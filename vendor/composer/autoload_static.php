@@ -33,6 +33,7 @@ class ComposerStaticInit98c7317e3be94a5c35732696d821441a
         'm' => 
         array (
             'mikehaertl\\tmp\\' => 15,
+            'mdm\\admin\\' => 10,
         ),
         'k' => 
         array (
@@ -147,6 +148,10 @@ class ComposerStaticInit98c7317e3be94a5c35732696d821441a
         'mikehaertl\\tmp\\' => 
         array (
             0 => __DIR__ . '/..' . '/mikehaertl/php-tmpfile/src',
+        ),
+        'mdm\\admin\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/mdmsoft/yii2-admin',
         ),
         'kartik\\widgets\\' => 
         array (
