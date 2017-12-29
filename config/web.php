@@ -5,6 +5,11 @@ $db = require __DIR__ . '/db.php';
 
 $config = [
     'id' => 'basic',
+    'language' => 'es-MX',
+    'name' => "All Inventory",
+    // set source language to be English
+    'sourceLanguage' => 'en-US',
+
     'basePath' => dirname(__DIR__),
     'bootstrap' => ['log'],
     'aliases' => [
@@ -15,6 +20,7 @@ $config = [
     'modules' => [
     	'admin' => [
             'class' => 'mdm\admin\Module',
+            'layout' => 'left-menu',
         ],
     ],
 
@@ -54,6 +60,20 @@ $config = [
 
         'authManager' => [
             'class' => 'yii\rbac\DbManager', // or use 'yii\rbac\DbManager'
+        ],
+
+        'i18n' => [
+            'translations' => [
+                'app*' => [
+                    'class' => 'yii\i18n\PhpMessageSource',
+                    //'basePath' => '@app/messages',
+                    //'sourceLanguage' => 'en-US',
+                    'fileMap' => [
+                        'app' => 'app.php',
+                        'app/error' => 'error.php',
+                    ],
+                ],
+            ],
         ],
         /*
         'urlManager' => [
