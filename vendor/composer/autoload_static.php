@@ -30,6 +30,10 @@ class ComposerStaticInit98c7317e3be94a5c35732696d821441a
         array (
             'phpDocumentor\\Reflection\\' => 25,
         ),
+        'm' => 
+        array (
+            'mikehaertl\\tmp\\' => 15,
+        ),
         'k' => 
         array (
             'kartik\\widgets\\' => 15,
@@ -57,6 +61,7 @@ class ComposerStaticInit98c7317e3be94a5c35732696d821441a
         ),
         'c' => 
         array (
+            'codemix\\excelexport\\' => 20,
             'cebe\\markdown\\' => 14,
         ),
         'W' => 
@@ -134,6 +139,10 @@ class ComposerStaticInit98c7317e3be94a5c35732696d821441a
             0 => __DIR__ . '/..' . '/phpdocumentor/reflection-common/src',
             1 => __DIR__ . '/..' . '/phpdocumentor/type-resolver/src',
             2 => __DIR__ . '/..' . '/phpdocumentor/reflection-docblock/src',
+        ),
+        'mikehaertl\\tmp\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/mikehaertl/php-tmpfile/src',
         ),
         'kartik\\widgets\\' => 
         array (
@@ -223,6 +232,10 @@ class ComposerStaticInit98c7317e3be94a5c35732696d821441a
         array (
             0 => __DIR__ . '/..' . '/kartik-v/yii2-widget-affix',
         ),
+        'codemix\\excelexport\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/codemix/yii2-excelexport/src',
+        ),
         'cebe\\markdown\\' => 
         array (
             0 => __DIR__ . '/..' . '/cebe/markdown',
@@ -307,6 +320,10 @@ class ComposerStaticInit98c7317e3be94a5c35732696d821441a
             'Prophecy\\' => 
             array (
                 0 => __DIR__ . '/..' . '/phpspec/prophecy/src',
+            ),
+            'PHPExcel' => 
+            array (
+                0 => __DIR__ . '/..' . '/phpoffice/phpexcel/Classes',
             ),
         ),
         'H' => 

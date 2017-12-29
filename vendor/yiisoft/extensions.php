@@ -228,4 +228,13 @@ return array (
       '@kartik/widgets' => $vendorDir . '/kartik-v/yii2-widgets',
     ),
   ),
+  'codemix/yii2-excelexport' => 
+  array (
+    'name' => 'codemix/yii2-excelexport',
+    'version' => '2.5.0.0',
+    'alias' => 
+    array (
+      '@codemix/excelexport' => $vendorDir . '/codemix/yii2-excelexport/src',
+    ),
+  ),
 );
