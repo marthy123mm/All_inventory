@@ -5,6 +5,7 @@
 */
 return [
     'wellcome' => 'Bienvenido',
+    'Save' => 'Guardar',
     
     //TRASNLATIONS FOR ACTIVOS
     'Assets' => 'Activos',
@@ -20,6 +21,9 @@ return [
     'Id Asset Type' => 'Id Tipo de Activo',
 	'Id Model' => 'Id Modelo',
 	'Id Leasing' => 'Id Arrendamiento',
+	'General information' => 'Información General',
+	'Finance information' => 'Información de Finanzas',
+	'Price' => 'Precio',
     
 ];
 

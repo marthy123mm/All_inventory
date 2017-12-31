@@ -2,40 +2,86 @@
 
 use yii\helpers\Html;
 use yii\widgets\ActiveForm;
+use kartik\date\DatePicker;
+use kartik\money\MaskMoney;
 
 /* @var $this yii\web\View */
 /* @var $model app\models\Asset */
 /* @var $form yii\widgets\ActiveForm */
 ?>
 
-<div class="asset-form">
+<?php $form = ActiveForm::begin(); ?>
+<div class="container">
 
-    <?php $form = ActiveForm::begin(); ?>
+    <div class="row">
 
-    <?= $form->field($model, 'purchase_date')->textInput() ?>
+        <div class="col-md-6">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <?= Yii::t('app', 'General information')?>
+                </div>
+                <div class="panel-body">
 
-    <?= $form->field($model, 'description')->textarea(['rows' => 6]) ?>
+                    <?= $form->field($model, 'serial_number')->textInput(['maxlength' => true]) ?>
+                    
 
-    <?= $form->field($model, 'sales_check')->textInput(['maxlength' => true]) ?>
+                    <?= $form->field($model, 'description')->textarea(['rows' => 4]) ?>
 
-    <?= $form->field($model, 'create_at')->textInput() ?>
+                    <?= $form->field($model, 'ubication')->textInput(['maxlength' => true]) ?>
 
-    <?= $form->field($model, 'status')->textInput() ?>
+                    <?= $form->field($model, 'id_model')->textInput() ?>
 
-    <?= $form->field($model, 'serial_number')->textInput(['maxlength' => true]) ?>
+                    <?= $form->field($model, 'id_asset_type')->textInput() ?>
 
-    <?= $form->field($model, 'ubication')->textInput(['maxlength' => true]) ?>
+                    
+                
+                </div>
+            </div>
 
-    <?= $form->field($model, 'id_asset_type')->textInput() ?>
+        </div>
 
-    <?= $form->field($model, 'id_model')->textInput() ?>
+        <div class="col-md-6">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <?= Yii::t('app', 'Finance information')?>
+                </div>
+                <div class="panel-body">
 
-    <?= $form->field($model, 'id_leasing')->textInput() ?>
+                    <?= $form->field($model, 'status')->textInput() ?>
 
-    <div class="form-group">
-        <?= Html::submitButton(Yii::t('app', 'Save'), ['class' => 'btn btn-success']) ?>
+                    <?= $form->field($model, 'purchase_date')->widget(DatePicker::classname(), [
+                        'type' => DatePicker::TYPE_COMPONENT_APPEND,
+
+                        'pluginOptions' => [
+                        'autoclose'=>true,
+                        'format' => 'yyyy/m/dd']
+                    ]) ?>
+
+
+                    <?= $form->field($model, 'price')->widget(MaskMoney::classname(), [
+                            'pluginOptions' => [
+                            'prefix' => 'MNX $ ',
+                            'allowNegative' => false
+                        ]
+                    ]);?>
+
+
+
+                    <?= $form->field($model, 'sales_check')->textInput(['maxlength' => true]) ?>
+
+                    <?= $form->field($model, 'id_leasing')->textInput() ?>
+
+                    <div class="form-group">
+                        <?= Html::submitButton(Yii::t('app', 'Save'), ['class' => 'btn btn-success']) ?>
+                    </div>
+
+                    
+                </div>
+            </div>
+
+        </div>
     </div>
-
-    <?php ActiveForm::end(); ?>
-
 </div>
+
+
+<?php ActiveForm::end(); ?>
