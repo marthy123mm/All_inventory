@@ -33,6 +33,14 @@ return [
 	'Id Brand' => 'Id de marca',
     'Create Brand' => 'Crear marca',
     'Update Brnad' => 'Actualizar marca',
+
+
+    'Models' => 'Modelos',
+    'Create Models' => 'Crear Modelo',
+    'Models' => 'Modelo',
+    'Model' => 'Modelo',
+    'Id Model' => 'Id de modelo',
+    'Picture' => 'Imagen',
 ];
 
 ?>
