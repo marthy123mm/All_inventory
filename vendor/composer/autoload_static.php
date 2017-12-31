@@ -49,6 +49,7 @@ class ComposerStaticInit98c7317e3be94a5c35732696d821441a
             'kartik\\range\\' => 13,
             'kartik\\plugins\\fileinput\\' => 25,
             'kartik\\plugins\\depdrop\\' => 23,
+            'kartik\\money\\' => 13,
             'kartik\\growl\\' => 13,
             'kartik\\form\\' => 12,
             'kartik\\file\\' => 12,
@@ -200,6 +201,10 @@ class ComposerStaticInit98c7317e3be94a5c35732696d821441a
         'kartik\\plugins\\depdrop\\' => 
         array (
             0 => __DIR__ . '/..' . '/kartik-v/dependent-dropdown',
+        ),
+        'kartik\\money\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/kartik-v/yii2-money',
         ),
         'kartik\\growl\\' => 
         array (
