@@ -6,6 +6,8 @@
 return [
     'wellcome' => 'Bienvenido',
     'Save' => 'Guardar',
+    'Update' => 'Actualizar',
+    'Delete' => 'Borrar',
     
     //TRASNLATIONS FOR ACTIVOS
     'Assets' => 'Activos',
@@ -24,7 +26,13 @@ return [
 	'General information' => 'Información General',
 	'Finance information' => 'Información de Finanzas',
 	'Price' => 'Precio',
-    
+
+
+	'Brands' => 'Marcas',
+	'Brand' => 'Marca',
+	'Id Brand' => 'Id de marca',
+    'Create Brand' => 'Crear marca',
+    'Update Brnad' => 'Actualizar marca',
 ];
 
 ?>
