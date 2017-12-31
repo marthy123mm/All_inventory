@@ -10,6 +10,8 @@ use yii\bootstrap\NavBar;
 use yii\widgets\Breadcrumbs;
 use app\assets\AppAsset;
 
+use mdm\admin\components\MenuHelper;
+
 AppAsset::register($this);
 ?>
 <?php $this->beginPage() ?>
@@ -28,6 +30,11 @@ AppAsset::register($this);
 
 <div class="wrap">
     <?php
+
+    if (!Yii::$app->user->isGuest){
+        $items = MenuHelper::getAssignedMenu(Yii::$app->user->id);
+    }
+
     NavBar::begin([
         'brandLabel' => Yii::$app->name,
         'brandUrl' => Yii::$app->homeUrl,
@@ -37,7 +44,7 @@ AppAsset::register($this);
     ]);
     echo Nav::widget([
         'options' => ['class' => 'navbar-nav navbar-right'],
-        'items' => [
+        'items' => /*[
             ['label' => 'Home', 'url' => ['/site/index']],
             ['label' => 'About', 'url' => ['/site/about']],
             ['label' => 'Contact', 'url' => ['/site/contact']],
@@ -53,7 +60,7 @@ AppAsset::register($this);
                 . Html::endForm()
                 . '</li>'
             )
-        ],
+        ]*/$items,
     ]);
     NavBar::end();
     ?>
