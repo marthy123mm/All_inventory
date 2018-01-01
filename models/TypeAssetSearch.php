@@ -19,7 +19,7 @@ class TypeAssetSearch extends TypeAsset
     {
         return [
             [['id_type_asset'], 'integer'],
-            [['type', 'description'], 'safe'],
+            [['type', 'description', 'icon'], 'safe'],
         ];
     }
 
@@ -63,7 +63,8 @@ class TypeAssetSearch extends TypeAsset
         ]);
 
         $query->andFilterWhere(['like', 'type', $this->type])
-            ->andFilterWhere(['like', 'description', $this->description]);
+            ->andFilterWhere(['like', 'description', $this->description])
+            ->andFilterWhere(['like', 'icon', $this->icon]);
 
         return $dataProvider;
     }

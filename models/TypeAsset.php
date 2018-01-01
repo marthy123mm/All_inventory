@@ -10,10 +10,11 @@ use Yii;
  * @property int $id_type_asset
  * @property string $type
  * @property string $description
+ * @property string $icon
  *
  * @property Asset[] $assets
  */
-class Typeasset extends \yii\db\ActiveRecord
+class TypeAsset extends \yii\db\ActiveRecord
 {
     /**
      * @inheritdoc
@@ -29,9 +30,9 @@ class Typeasset extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['type'], 'required'],
+            [['type', 'icon'], 'required'],
             [['type'], 'string', 'max' => 45],
-            [['description'], 'string', 'max' => 100],
+            [['description', 'icon'], 'string', 'max' => 100],
         ];
     }
 
@@ -44,6 +45,7 @@ class Typeasset extends \yii\db\ActiveRecord
             'id_type_asset' => Yii::t('app', 'Id Type Asset'),
             'type' => Yii::t('app', 'Type'),
             'description' => Yii::t('app', 'Description'),
+            'icon' => Yii::t('app', 'Icon'),
         ];
     }
 

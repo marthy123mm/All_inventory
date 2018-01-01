@@ -28,6 +28,7 @@ $this->params['breadcrumbs'][] = $this->title;
             'id_type_asset',
             'type',
             'description',
+            'icon',
 
             ['class' => 'yii\grid\ActionColumn'],
         ],
