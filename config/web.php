@@ -69,7 +69,7 @@ $config = [
                     'basePath' => '@app/messages',
                     'sourceLanguage' => 'en-US',
                     'fileMap' => [
-                        //'app' => 'app.php',
+                        'app' => 'app.php',
                         'app/error' => 'error.php',
                     ],
                 ],
@@ -80,7 +80,7 @@ $config = [
                     'sourceLanguage' => 'en',
                     'fileMap' => [
                         'app' => 'app.php',
-                        'app/error' => 'error.php',
+                        //'app/error' => 'error.php',
                     ],
                 ],
             ],
