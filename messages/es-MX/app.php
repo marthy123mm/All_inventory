@@ -26,7 +26,7 @@ return [
 	'General information' => 'Información General',
 	'Finance information' => 'Información de Finanzas',
 	'Price' => 'Precio',
-
+    'Currency' => 'Moneda',
 
 	'Brands' => 'Marcas',
 	'Brand' => 'Marca',

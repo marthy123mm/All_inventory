@@ -60,10 +60,17 @@ use kartik\money\MaskMoney;
 
                     <?= $form->field($model, 'price')->widget(MaskMoney::classname(), [
                             'pluginOptions' => [
-                            'prefix' => 'MNX $ ',
                             'allowNegative' => false
                         ]
                     ]);?>
+
+                    <?= $form->field($model, 'currency')->dropDownList(
+
+                        ['MNX' => 'MNX',
+                        'USD' => 'USD'],
+                        ['prompt'=>' ']);
+
+                    ?>
 
 
 

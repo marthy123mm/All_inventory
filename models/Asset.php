@@ -13,6 +13,7 @@ use Yii;
  * @property string $sales_check
  * @property string $create_at
  * @property string $price
+ * @property string $currency
  * @property int $status
  * @property string $serial_number
  * @property string $ubication
@@ -42,10 +43,10 @@ class Asset extends \yii\db\ActiveRecord
         return [
             [['purchase_date', 'create_at'], 'safe'],
             [['description'], 'string'],
-            [['price', 'id_asset_type', 'id_model'], 'required'],
+            [['price', 'id_asset_type', 'id_model' ,'currency'], 'required'],
             [['price', 'id_leasing'], 'number'],
             [['status', 'id_asset_type', 'id_model'], 'integer'],
-            [['sales_check', 'ubication'], 'string', 'max' => 45],
+            [['sales_check', 'ubication' ,'currency'], 'string', 'max' => 45],
             [['serial_number'], 'string', 'max' => 100],
             [['id_model'], 'exist', 'skipOnError' => true, 'targetClass' => Models::className(), 'targetAttribute' => ['id_model' => 'id_model']],
             [['id_asset_type'], 'exist', 'skipOnError' => true, 'targetClass' => TypeAsset::className(), 'targetAttribute' => ['id_asset_type' => 'id_type_asset']],
@@ -64,6 +65,7 @@ class Asset extends \yii\db\ActiveRecord
             'sales_check' => Yii::t('app', 'Sales Check'),
             'create_at' => Yii::t('app', 'Create At'),
             'price' => Yii::t('app', 'Price'),
+            'currency' => Yii::t('app', 'Currency'),
             'status' => Yii::t('app', 'Status'),
             'serial_number' => Yii::t('app', 'Serial Number'),
             'ubication' => Yii::t('app', 'Ubication'),
