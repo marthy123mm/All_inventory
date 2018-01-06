@@ -51,6 +51,13 @@ class Asset extends \yii\db\ActiveRecord
     const STATUS_EXTRAVIADO = 7;
     const STATUS_ROBADO = 8;
 
+    const TIPO_COMPUTADORA = 1;
+    const TIPO_SERVIDOR = 2;    
+    const TIPO_LAPTOP = 3;
+    const TIPO_CELULAR = 4;
+    const TIPO_TABLETA = 5;
+
+
     public static function tableName()
     {
         return 'asset';
