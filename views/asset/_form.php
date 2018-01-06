@@ -1,10 +1,13 @@
 <?php
 
 use yii\helpers\Html;
+use yii\helpers\ArrayHelper;
+
 use yii\widgets\ActiveForm;
 use kartik\date\DatePicker;
 use kartik\money\MaskMoney;
 use app\models\Asset;
+use app\models\Typeasset;
 
 /* @var $this yii\web\View */
 /* @var $model app\models\Asset */
@@ -32,7 +35,11 @@ use app\models\Asset;
 
                     <?= $form->field($model, 'id_model')->textInput() ?>
 
-                    <?= $form->field($model, 'id_asset_type')->textInput() ?>
+                    <?= $form->field($model, 'id_asset_type')->dropDownList(
+                        ArrayHelper::map(Typeasset::find()->all(), 'id_type_asset','type' ),
+                        ['prompt'=>' ']);
+
+                    ?>
 
                     
                 

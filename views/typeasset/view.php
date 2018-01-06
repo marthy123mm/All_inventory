@@ -31,7 +31,16 @@ $this->params['breadcrumbs'][] = $this->title;
             'id_type_asset',
             'type',
             'description',
-            'icon',
+            [
+                'attribute' => 'icon',
+                'format' => 'html',
+                'label' => 'Imagen',
+                'value' => function ($data) {
+                    return Html::img($data['icon'],
+                        ['width' => '50px']);
+                },
+                
+            ],
         ],
     ]) ?>
 
