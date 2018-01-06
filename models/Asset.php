@@ -63,14 +63,15 @@ class Asset extends \yii\db\ActiveRecord
     {
         return [
             [['purchase_date', 'create_at'], 'safe'],
-            [['description'], 'string'],
-            [['price', 'id_asset_type', 'id_model' ,'currency'], 'required'],
-            [['price', 'id_leasing'], 'number'],
+            [['description' ,'so', 'processor'], 'string'],
+            [['price', 'id_asset_type','currency'], 'required'],
+            [['price', 'id_leasing' ,'status' ,'ram','hard_disk'], 'number'],
             [['status', 'id_asset_type', 'id_model'], 'integer'],
             [['sales_check', 'ubication' ,'currency'], 'string', 'max' => 45],
             [['serial_number'], 'string', 'max' => 100],
             [['id_model'], 'exist', 'skipOnError' => true, 'targetClass' => Models::className(), 'targetAttribute' => ['id_model' => 'id_model']],
             [['id_asset_type'], 'exist', 'skipOnError' => true, 'targetClass' => TypeAsset::className(), 'targetAttribute' => ['id_asset_type' => 'id_type_asset']],
+            [['id_parent'], 'exist', 'skipOnError' => true, 'targetClass' => Asset::className(), 'targetAttribute' => ['id_parent' => 'id_asset']],
         ];
     }
 
@@ -93,6 +94,13 @@ class Asset extends \yii\db\ActiveRecord
             'id_asset_type' => Yii::t('app', 'Id Asset Type'),
             'id_model' => Yii::t('app', 'Id Model'),
             'id_leasing' => Yii::t('app', 'Id Leasing'),
+            'so' => Yii::t('app', 'So'),
+            'ram' => Yii::t('app', 'Ram'),
+            'hard_disk' => Yii::t('app', 'Hard Disk'),
+            'processor' => Yii::t('app', 'Processor'),
+            'id_parent' => Yii::t('app', 'Id Parent'),
+
+
         ];
     }
 
@@ -111,6 +119,7 @@ class Asset extends \yii\db\ActiveRecord
     {
         return $this->hasOne(TypeAsset::className(), ['id_type_asset' => 'id_asset_type']);
     }
+
 
     /**
      * @return \yii\db\ActiveQuery
