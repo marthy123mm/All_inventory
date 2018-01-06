@@ -6,7 +6,7 @@ $db = require __DIR__ . '/db.php';
 $config = [
     'id' => 'basic',
     'language' => 'es-MX',
-    'name' => "All Inventory",
+    'name' => "Tonalli",
     // set source language to be English
     'sourceLanguage' => 'en-US',
 
