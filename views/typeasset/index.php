@@ -23,12 +23,18 @@ $this->params['breadcrumbs'][] = $this->title;
         'dataProvider' => $dataProvider,
         'filterModel' => $searchModel,
         'columns' => [
-            ['class' => 'yii\grid\SerialColumn'],
 
-            'id_type_asset',
             'type',
-            'description',
-            'icon',
+            [
+                'attribute' => 'icon',
+                'format' => 'html',
+                'label' => 'Imagen',
+                'value' => function ($data) {
+                    return Html::img($data['icon'],
+                        ['width' => '20px']);
+                },
+                
+            ],
 
             ['class' => 'yii\grid\ActionColumn'],
         ],
