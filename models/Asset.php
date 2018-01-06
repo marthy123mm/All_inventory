@@ -30,6 +30,27 @@ class Asset extends \yii\db\ActiveRecord
     /**
      * @inheritdoc
      */
+    const STATUS_ARRAY = array (
+            '1' => 'Stock',
+            '2' => 'En Uso',
+            '3' => 'Dañado',
+            '4' => 'Baja',
+            '5' => 'Vendido',
+            '6' => 'Garantía',
+            '7' => 'Extraviado',
+            '8' => 'Robado',
+
+    );
+
+    const STATUS_STOCK = 1;
+    const STATUS_EN_USO = 2;
+    const STATUS_DANADO = 3;
+    const STATUS_BAJA = 4;
+    const STATUS_VENDIDO = 5;
+    const STATUS_GARANTIA = 6;
+    const STATUS_EXTRAVIADO = 7;
+    const STATUS_ROBADO = 8;
+
     public static function tableName()
     {
         return 'asset';

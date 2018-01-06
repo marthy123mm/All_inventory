@@ -4,6 +4,7 @@ use yii\helpers\Html;
 use yii\widgets\ActiveForm;
 use kartik\date\DatePicker;
 use kartik\money\MaskMoney;
+use app\models\Asset;
 
 /* @var $this yii\web\View */
 /* @var $model app\models\Asset */
@@ -47,7 +48,11 @@ use kartik\money\MaskMoney;
                 </div>
                 <div class="panel-body">
 
-                    <?= $form->field($model, 'status')->textInput() ?>
+                    <?= $form->field($model, 'status')->dropDownList(
+                        Asset::STATUS_ARRAY,
+                        ['prompt'=>' ']);
+
+                    ?>
 
                     <?= $form->field($model, 'purchase_date')->widget(DatePicker::classname(), [
                         'type' => DatePicker::TYPE_COMPONENT_APPEND,
