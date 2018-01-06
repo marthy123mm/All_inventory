@@ -36,7 +36,7 @@ AppAsset::register($this);
     }
 
     NavBar::begin([
-        'brandLabel' => Yii::$app->name,
+        'brandLabel' => "<img src='tonalli_logo_white.png' height='30px'>",
         'brandUrl' => Yii::$app->homeUrl,
         'options' => [
             'class' => 'navbar-inverse navbar-fixed-top',
