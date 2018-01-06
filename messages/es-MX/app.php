@@ -10,6 +10,7 @@ return [
     'Delete' => 'Borrar',
     
     //TRASNLATIONS FOR ACTIVOS
+
     'Assets' => 'Activos',
     'Id Asset' => 'ID de activo',
     'Create Asset' => 'Crear Activo',
@@ -27,6 +28,9 @@ return [
 	'Finance information' => 'Información de Finanzas',
 	'Price' => 'Precio',
     'Currency' => 'Moneda',
+    'Admin Assets' => 'Administrar Activos',
+    'View Assets' => 'Ver Activos',
+    'Assing Assets' => 'Asignar Activos',
 
 	'Brands' => 'Marcas',
 	'Brand' => 'Marca',
