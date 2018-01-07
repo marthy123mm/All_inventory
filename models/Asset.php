@@ -71,7 +71,7 @@ class Asset extends \yii\db\ActiveRecord
         return [
             [['purchase_date', 'create_at'], 'safe'],
             [['description' ,'so', 'processor'], 'string'],
-            [['price', 'id_asset_type','currency'], 'required'],
+            [['price', 'id_asset_type','currency','status'], 'required'],
             [['price', 'id_leasing' ,'status' ,'ram','hard_disk'], 'number'],
             [['status', 'id_asset_type', 'id_model'], 'integer'],
             [['sales_check', 'ubication' ,'currency'], 'string', 'max' => 45],

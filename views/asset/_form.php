@@ -4,10 +4,15 @@ use yii\helpers\Html;
 use yii\helpers\ArrayHelper;
 
 use yii\widgets\ActiveForm;
+use yii\web\View;
 use kartik\date\DatePicker;
 use kartik\money\MaskMoney;
 use app\models\Asset;
 use app\models\Typeasset;
+use app\models\Currency;
+
+use kartik\widgets\Select2;
+use yii\web\JsExpression;
 
 /* @var $this yii\web\View */
 /* @var $model app\models\Asset */
@@ -34,11 +39,39 @@ use app\models\Typeasset;
                     <?= $form->field($model, 'ubication')->textInput(['maxlength' => true]) ?>
 
                     <?= $form->field($model, 'id_model')->textInput() ?>
+                    <?php
 
-                    <?= $form->field($model, 'id_asset_type')->dropDownList(
-                        ArrayHelper::map(Typeasset::find()->all(), 'id_type_asset','type' ),
-                        ['prompt'=>' ']);
+                     $data_type_asset = ArrayHelper::map(Typeasset::find()->all(), 'id_type_asset','type' );
+                    
+                    ?>
+                    <?php
+                    // Templating example of formatting each list element
+                    $url = \Yii::$app->urlManager->baseUrl .'/icons/assets/';
 
+$format = <<< SCRIPT
+function format(typeasset) {
+    if (!typeasset.id) return typeasset.text; // optgroup
+    src = '$url' +  typeasset.id + '.png'
+    return '<img class ="icon_type_asset" src="' + src + '"/>' + typeasset.text;
+}
+SCRIPT;
+                    $escape = new JsExpression("function(m) { return m; }");
+                    $this->registerJs($format, View::POS_HEAD);
+
+                    ?>
+
+                    <?= $form->field($model, 'id_asset_type')->widget(Select2::classname(),[
+                            
+                            'data' => $data_type_asset,
+                            'options' => ['placeholder' => 'Selecciona un tipo'],
+                            'pluginOptions' => [
+                                'templateResult' => new JsExpression('format'),
+                                'templateSelection' => new JsExpression('format'),
+                                'escapeMarkup' => $escape,
+                                'allowClear' => true
+                            ],
+
+                        ]);
                     ?>
 
                     
@@ -55,9 +88,9 @@ use app\models\Typeasset;
                 </div>
                 <div class="panel-body">
 
-                    <?= $form->field($model, 'status')->dropDownList(
-                        Asset::STATUS_ARRAY,
-                        ['prompt'=>' ']);
+                    <?= $form->field($model, 'status')->widget(Select2::classname(),[
+                        'data' => Asset::STATUS_ARRAY,
+                        ]);
 
                     ?>
 
@@ -76,11 +109,14 @@ use app\models\Typeasset;
                         ]
                     ]);?>
 
-                    <?= $form->field($model, 'currency')->dropDownList(
+                    <?php $currency_list = ArrayHelper::map(Currency::LIST_CURRENCY, 'code','code' );?>
 
-                        ['MNX' => 'MNX',
-                        'USD' => 'USD'],
-                        ['prompt'=>' ']);
+                
+
+                    <?= $form->field($model, 'currency')->widget(Select2::classname(),[
+                        'options' => ['placeholder' => Yii::t('app', 'Currency')],
+                        'data' => $currency_list,
+                        ]);
 
                     ?>
 
