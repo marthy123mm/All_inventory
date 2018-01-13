@@ -18,8 +18,9 @@ class AssetSearch extends Asset
     public function rules()
     {
         return [
-            [['id_parent','id_os','id_asset', 'id_status', 'id_asset_type', 'id_model', 'id_leasing'], 'integer'],
-            [['purchase_date', 'description', 'sales_check', 'create_at', 'serial_number', 'ubication'], 'safe'],
+            [['id_asset', 'id_status', 'id_os', 'hard_disk', 'ram', 'id_processor', 'id_model', 'id_asset_type', 'id_parent'], 'integer'],
+            [['purchase_date', 'description', 'sales_check', 'create_at', 'currency', 'serial_number', 'ubication'], 'safe'],
+            [['price', 'id_leasing'], 'number'],
         ];
     }
 
@@ -62,14 +63,21 @@ class AssetSearch extends Asset
             'id_asset' => $this->id_asset,
             'purchase_date' => $this->purchase_date,
             'create_at' => $this->create_at,
+            'price' => $this->price,
             'id_status' => $this->id_status,
-            'id_asset_type' => $this->id_asset_type,
-            'id_model' => $this->id_model,
+            'id_os' => $this->id_os,
+            'hard_disk' => $this->hard_disk,
+            'ram' => $this->ram,
+            'id_processor' => $this->id_processor,
             'id_leasing' => $this->id_leasing,
+            'id_model' => $this->id_model,
+            'id_asset_type' => $this->id_asset_type,
+            'id_parent' => $this->id_parent,
         ]);
 
         $query->andFilterWhere(['like', 'description', $this->description])
             ->andFilterWhere(['like', 'sales_check', $this->sales_check])
+            ->andFilterWhere(['like', 'currency', $this->currency])
             ->andFilterWhere(['like', 'serial_number', $this->serial_number])
             ->andFilterWhere(['like', 'ubication', $this->ubication]);
 
