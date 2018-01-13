@@ -4,19 +4,19 @@ use yii\helpers\Html;
 use yii\grid\GridView;
 
 /* @var $this yii\web\View */
-/* @var $searchModel app\models\AssetSearch */
+/* @var $searchModel app\models\StatusAssetSearch */
 /* @var $dataProvider yii\data\ActiveDataProvider */
 
-$this->title = Yii::t('app', 'Assets');
+$this->title = Yii::t('app', 'Status Assets');
 $this->params['breadcrumbs'][] = $this->title;
 ?>
-<div class="asset-index">
+<div class="status-asset-index">
 
     <h1><?= Html::encode($this->title) ?></h1>
     <?php // echo $this->render('_search', ['model' => $searchModel]); ?>
 
     <p>
-        <?= Html::a(Yii::t('app', 'Create Asset'), ['create'], ['class' => 'btn btn-success']) ?>
+        <?= Html::a(Yii::t('app', 'Create Status Asset'), ['create'], ['class' => 'btn btn-success']) ?>
     </p>
 
     <?= GridView::widget([
@@ -25,17 +25,9 @@ $this->params['breadcrumbs'][] = $this->title;
         'columns' => [
             ['class' => 'yii\grid\SerialColumn'],
 
-            'id_asset',
-            'purchase_date',
+            'id_status',
+            'status_name',
             'description:ntext',
-            'sales_check',
-            'create_at',
-            
-            //'serial_number',
-            //'ubication',
-            //'id_asset_type',
-            //'id_model',
-            //'id_leasing',
 
             ['class' => 'yii\grid\ActionColumn'],
         ],

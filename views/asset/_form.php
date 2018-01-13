@@ -10,6 +10,7 @@ use kartik\money\MaskMoney;
 use app\models\Asset;
 use app\models\Typeasset;
 use app\models\Currency;
+use app\models\StatusAsset;
 
 use kartik\widgets\Select2;
 use yii\web\JsExpression;
@@ -81,6 +82,8 @@ SCRIPT;
 
         </div>
 
+        
+
         <div class="col-md-6">
             <div class="panel panel-default">
                 <div class="panel-heading">
@@ -88,8 +91,8 @@ SCRIPT;
                 </div>
                 <div class="panel-body">
 
-                    <?= $form->field($model, 'status')->widget(Select2::classname(),[
-                        'data' => Asset::STATUS_ARRAY,
+                    <?= $form->field($model, 'id_status')->widget(Select2::classname(),[
+                        'data' => ArrayHelper::map(StatusAsset::find()->all(), 'id_status','status_name' ),
                         ]);
 
                     ?>
@@ -133,8 +136,25 @@ SCRIPT;
                     
                 </div>
             </div>
-
         </div>
+
+
+        <div class="col-md-6" id="computing" >
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <?= Yii::t('app', 'Computer information')?>
+                </div>
+                <div class="panel-body">
+
+                    <?= $form->field($model, 'hard_disk')->textInput(['maxlength' => true]) ?>
+
+                    <?= $form->field($model, 'ram')->textInput(['maxlength' => true]) ?>
+
+                    
+                </div>
+            </div>
+        </div>
+
     </div>
 </div>
 
