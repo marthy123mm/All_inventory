@@ -31,6 +31,10 @@ return [
     'Admin Assets' => 'Administrar Activos',
     'View Assets' => 'Ver Activos',
     'Assing Assets' => 'Asignar Activos',
+    'Os' => 'Sistema Operativo',
+    'Ram' => 'Memoria RAM',
+    'Processor' => 'Procesador',
+    'Hard Disk' => 'Disco Duro',
 
 	'Brands' => 'Marcas',
 	'Brand' => 'Marca',

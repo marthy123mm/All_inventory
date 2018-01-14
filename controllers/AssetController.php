@@ -4,11 +4,15 @@ namespace app\controllers;
 
 use Yii;
 use app\models\Asset;
+use app\models\Models;
+
 use app\models\AssetSearch;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
 
+use yii\helpers\ArrayHelper;
+use yii\helpers\Json;
 /**
  * AssetController implements the CRUD actions for Asset model.
  */
@@ -123,5 +127,35 @@ class AssetController extends Controller
         }
 
         throw new NotFoundHttpException(Yii::t('app', 'The requested page does not exist.'));
+    }
+
+    public function actionSearchmodels(){
+
+        $out = [];
+        //$_POST['depdrop_parents'] = 2;
+        
+        if (isset($_POST['depdrop_parents'])) {
+
+            $parents = $_POST['depdrop_parents'];
+            if ($parents != null) {
+                
+                $brand_id = $parents;
+
+                $out =  $this->getModelsByIdBrand($brand_id);    
+                echo Json::encode(['output'=>$out, 'selected'=>'']);
+                return;
+            }
+        }
+        echo Json::encode(['output'=>'', 'selected'=>'']);
+    }
+
+
+    //returns an array of models by Id brand
+    public function getModelsByIdBrand($id_brand){
+
+        return Models::find()
+            ->select(['id_model AS id', 'model AS name'])
+            ->where(['id_brand' => $id_brand])
+            ->asArray()->all();
     }
 }

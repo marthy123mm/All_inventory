@@ -37,6 +37,8 @@ use Yii;
  */
 class Asset extends \yii\db\ActiveRecord
 {
+
+    public $marca;
     /**
      * @inheritdoc
      */
