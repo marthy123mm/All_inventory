@@ -13,6 +13,7 @@ return [
 
     'Assets' => 'Activos',
     'Id Asset' => 'ID de activo',
+    'Id Internal' => 'ID Interno',
     'Create Asset' => 'Crear Activo',
     'Purchase Date' => 'Fecha de Compra',
     'Description' => 'Descripción',
@@ -35,6 +36,7 @@ return [
     'Ram' => 'Memoria RAM',
     'Processor' => 'Procesador',
     'Hard Disk' => 'Disco Duro',
+    'Status' => 'Estado',
 
 	'Brands' => 'Marcas',
 	'Brand' => 'Marca',
@@ -49,6 +51,8 @@ return [
     'Model' => 'Modelo',
     'Id Model' => 'Id de modelo',
     'Picture' => 'Imagen',
+
+    'Type Asset' => 'Tipo de Activo',
 ];
 
 ?>

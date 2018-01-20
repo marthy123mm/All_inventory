@@ -41,6 +41,7 @@ use kartik\widgets\TouchSpin;
     <div class="row">
         <div class="col-md-4">
 
+            <?= $form->field($model, 'id_internal')->textInput(['maxlength' => true]) ?>
             <?php
 
                 $data_type_asset = ArrayHelper::map(Typeasset::find()->all(), 'id_type_asset','type');
@@ -100,7 +101,7 @@ SCRIPT;
 
             <?= $form->field($model, 'id_status')->widget(Select2::classname(),[
                 'data' => ArrayHelper::map(StatusAsset::find()->all(), 'id_status','status_name' ),
-                ]);
+                ])->label(Yii::t('app', 'Status'));
 
             ?>
 

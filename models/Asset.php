@@ -8,6 +8,7 @@ use Yii;
  * This is the model class for table "asset".
  *
  * @property int $id_asset
+ * @property string $id_internal
  * @property string $purchase_date
  * @property string $description
  * @property string $sales_check
@@ -53,13 +54,13 @@ class Asset extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['purchase_date', 'price', 'currency', 'id_status', 'id_asset_type'], 'required'],
+            [['purchase_date', 'id_internal','price', 'currency', 'id_status', 'id_asset_type'], 'required'],
             [['purchase_date', 'create_at'], 'safe'],
             [['description'], 'string'],
             [['price', 'id_leasing'], 'number'],
             [['id_status', 'id_os', 'hard_disk', 'ram', 'id_processor', 'id_model', 'id_asset_type', 'id_parent'], 'integer'],
             [['sales_check', 'currency', 'ubication'], 'string', 'max' => 45],
-            [['serial_number'], 'string', 'max' => 100],
+            [['serial_number','id_internal'], 'string', 'max' => 100],
             [['id_os'], 'exist', 'skipOnError' => true, 'targetClass' => Os::className(), 'targetAttribute' => ['id_os' => 'id_os']],
             [['id_model'], 'exist', 'skipOnError' => true, 'targetClass' => Models::className(), 'targetAttribute' => ['id_model' => 'id_model']],
             [['id_parent'], 'exist', 'skipOnError' => true, 'targetClass' => Asset::className(), 'targetAttribute' => ['id_parent' => 'id_asset']],
@@ -76,6 +77,7 @@ class Asset extends \yii\db\ActiveRecord
     {
         return [
             'id_asset' => Yii::t('app', 'Id Asset'),
+            'id_internal' => Yii::t('app', 'Id Internal'),
             'purchase_date' => Yii::t('app', 'Purchase Date'),
             'description' => Yii::t('app', 'Description'),
             'sales_check' => Yii::t('app', 'Sales Check'),
