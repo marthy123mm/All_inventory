@@ -31,8 +31,12 @@ AppAsset::register($this);
 <div class="wrap">
     <?php
 
+
     if (!Yii::$app->user->isGuest){
         $items = MenuHelper::getAssignedMenu(Yii::$app->user->id);
+    }
+    else{
+        $items = [['label' => 'Login', 'url' => ['/site/login']]];
     }
 
     NavBar::begin([
